@@ -67,12 +67,13 @@ export default function Home() {
   };
 
   return (
-    <div className="container">
+    <div className="container" style={{ paddingLeft: '25px', paddingRight: '25px' }}>
       <main className="glass-panel">
         <div className="header">
-          <img src="/logo_pc.svg" alt="おそレス言いワケメーカー" style={{ maxWidth: '400px', height: 'auto', marginBottom: '1rem' }} />
-          <p>
-            気まずい返信遅れ、秒速で解決。
+          <img src="/logo_pc.svg" alt="おそレス言いワケメーカー" className="home-logo" />
+          <p style={{ lineHeight: '36px' }}>
+            気まずい返信遅れ、<br />
+            秒速で解決。
           </p>
         </div>
 

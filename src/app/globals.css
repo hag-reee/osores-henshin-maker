@@ -284,6 +284,7 @@ select:focus {
   cursor: pointer;
   font-family: inherit;
   font-weight: bold;
+  font-size: 15px;
   transition: all 0.2s;
   text-align: center;
   white-space: nowrap;
@@ -454,6 +455,19 @@ select:focus {
   font-weight: 500;
   max-width: 100%;
   margin: 0 auto;
+}
+
+.home-logo {
+  max-width: 400px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 640px) {
+  .home-logo {
+    max-width: 300px;
+    margin-bottom: 1rem;
+  }
 }
 
 .page-logo {
