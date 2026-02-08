@@ -17,6 +17,7 @@ export const metadata: Metadata = {
   description: "返信が遅れて気まずいときの言い訳をAIが生成します",
   icons: {
     icon: '/favicon.png',
+    apple: '/apple-touch-icon.png',
   },
   openGraph: {
     title: "おそレス言いワケメーカー",

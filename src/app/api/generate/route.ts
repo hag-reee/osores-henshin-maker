@@ -170,14 +170,17 @@ export async function POST(req: NextRequest) {
         let result = null;
         let successfulModel = '';
 
+        const errors: any[] = [];
+
         for (const model of MODELS) {
             attemptedModels.push(model);
             try {
                 result = await callGemini(model, prompt);
                 successfulModel = model;
                 break; // Success!
-            } catch (error) {
+            } catch (error: any) {
                 console.warn(`Model ${model} failed:`, error);
+                errors.push({ model, message: error.message || String(error) });
                 // Continue to next model
             }
         }
@@ -185,7 +188,8 @@ export async function POST(req: NextRequest) {
         if (!result || !successfulModel) {
             return NextResponse.json({
                 error: 'Failed to generate content after trying all models',
-                attemptedModels
+                attemptedModels,
+                errors // Return detailed errors for debugging
             }, { status: 503 });
         }
 
